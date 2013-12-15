@@ -1,0 +1,7 @@
+(** This is a sample mz file. *)
+
+open list
+
+val _ =
+  let l = cons (1, nil) in
+  print (length l)
