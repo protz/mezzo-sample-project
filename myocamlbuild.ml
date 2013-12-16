@@ -17,5 +17,9 @@
 (*                                                                           *)
 (*****************************************************************************)
 
+open Ocamlbuild_plugin
+
 let _ =
-  Ocamlbuild_mezzo.init ~boot:false ()
+  dispatch (fun event ->
+    Ocamlbuild_mezzo.apply_rules_and_flags ~boot:false event
+  )
